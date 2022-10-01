@@ -29,12 +29,12 @@ yarn install && yarn build
 - https://www.notion.so/ にアクセスして、`full screen database`で新しいページを作成（`/database`）
 - `DATABASE_ID`をコピー
   - `https://www.notion.so/YOUR_DOMAIN/DATABASE_ID`
-- integrationでデータベースを共有（参考：https://developers.notion.com/docs/getting-started）
+- integrationでデータベースを共有（参考：https://developers.notion.com/docs/getting-started ）
 
 ### 3. Notiordを準備
-- [Chrome extensions](chrome://extensions/)に移動
+- Chrome extensions (chrome://extensions/)に移動
   - `Load unpacked`を押して、ビルド出力先の`notiord/dist`を選択
-- `Ctrl + Shift + N`を押して、DATABASE_IDとAPI Secretを入力
+- `Ctrl + Shift + N`を押して、`DATABASE_ID`と`API Secret`を入力
 
 ### 4. Notiordを使う
 保存したい単語を右クリックして、`Save`を選ぶ
