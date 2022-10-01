@@ -1,4 +1,3 @@
-# Notiord
 <div align="center">
 	<h1>Notiord</h1>
 	<p>
