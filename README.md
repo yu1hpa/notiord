@@ -27,7 +27,7 @@ yarn install && yarn build
 ### 2. Notion Databaseを用意
 - https://www.notion.so/ にアクセスして、`full screen database`で新しいページを作成（`/database`）
 - `DATABASE_ID`をコピー
-  - `https://www.notion.so/YOUR_DOMAIN/DATABASE_ID`
+  - `https://www.notion.so/DATABASE_ID?v=...`
 - integrationでデータベースを共有（参考：https://developers.notion.com/docs/getting-started ）
 
 ### 3. Notiordを準備
