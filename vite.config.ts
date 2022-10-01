@@ -13,7 +13,7 @@ const manifest = defineManifest({
     _execute_action: {
       suggested_key: {
         windows: "Ctrl+Shift+L",
-        mac: "Ctrl+Shift+L",
+        mac: "MacCtrl+Shift+N",
         chromeos: "Ctrl+Shift+L",
         linux: "Ctrl+Shift+L",
       },
@@ -23,6 +23,11 @@ const manifest = defineManifest({
     default_popup: "popup.html",
     default_title: "notiord",
   },
+  background: {
+    service_worker: "src/background.ts",
+    type: "module",
+  },
+  host_permissions: ["https://*/*"],
 });
 
 export default defineConfig({
