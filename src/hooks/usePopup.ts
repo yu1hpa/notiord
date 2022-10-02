@@ -2,33 +2,33 @@ import { useEffect, useState } from "react";
 
 export const usePopup = () => {
   const [dbId, setDbId] = useState<string>("");
-  const [apiSec, setApiSec] = useState<string>("");
+  const [token, setToken] = useState<string>("");
   useEffect(() => {
-    chrome.storage.local.get(["dbId", "apiSec"], (res) => {
+    chrome.storage.local.get(["dbId", "token"], (res) => {
       setDbId(res.dbId || "");
-      setApiSec(res.apiSec || "");
+      setToken(res.token || "");
     });
   }, []);
   const reset = () => {
-    chrome.storage.local.set({ dbId: "", apiSec: "" }, () => {
+    chrome.storage.local.set({ dbId: "", token: "" }, () => {
       setDbId("");
-      setApiSec("");
+      setToken("");
     });
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    chrome.storage.local.set({ dbId, apiSec }, () => {});
+    chrome.storage.local.set({ dbId, token }, () => {});
   };
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {
       case "dbId":
         setDbId(e.target.value);
         break;
-      case "apiSec":
-        setApiSec(e.target.value);
+      case "token":
+        setToken(e.target.value);
         break;
       default:
     }
   };
-  return { dbId, apiSec, handleInput, onSubmit, reset };
+  return { dbId, token, handleInput, onSubmit, reset };
 };

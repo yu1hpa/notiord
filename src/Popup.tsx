@@ -1,7 +1,7 @@
 import { usePopup } from "./hooks/usePopup";
 
 const Popup = () => {
-  const { dbId, apiSec, handleInput, onSubmit, reset } = usePopup();
+  const { dbId, token, handleInput, onSubmit, reset } = usePopup();
 
   return (
     <form onSubmit={onSubmit}>
@@ -14,11 +14,11 @@ const Popup = () => {
         value={dbId}
         required
       />
-      <label>API Secret</label>
+      <label>Token</label>
       <input
         type="password"
-        value={apiSec}
-        name="apiSec"
+        value={token}
+        name="token"
         onChange={handleInput}
         required
       />
