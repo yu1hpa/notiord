@@ -13,9 +13,9 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener(
   (info: chrome.contextMenus.OnClickData) => {
     if (info.menuItemId === "saveword") {
-      chrome.storage.local.get(["dbId", "apiSec"], (res) => {
+      chrome.storage.local.get(["dbId", "token"], (res) => {
         const notion = new Client({
-          auth: res.apiSec,
+          auth: res.token,
         });
         const requestBody: CreatePageParameters = {
           parent: {
