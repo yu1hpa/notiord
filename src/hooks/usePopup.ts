@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const usePopup = () => {
   const [dbId, setDbId] = useState<string>("");
@@ -19,7 +19,7 @@ export const usePopup = () => {
     e.preventDefault();
     chrome.storage.local.set({ dbId, token }, () => {});
   };
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     switch (e.target.name) {
       case "dbId":
         setDbId(e.target.value);
@@ -29,6 +29,6 @@ export const usePopup = () => {
         break;
       default:
     }
-  };
+  }, []);
   return { dbId, token, handleInput, onSubmit, reset };
 };
