@@ -22,12 +22,9 @@ const Popup = () => {
         onChange={handleInput}
         required
       />
-      <h4>input is hidden for security</h4>
-      <p>Cmd/Ctrl + Shift + L : open setting popup</p>
-      <p>Cmd/Ctrl + Shift + I : open new page</p>
+      <p>Ctrl + Shift + N : open setting popup</p>
       <button type="submit">Save</button>
       <button onClick={reset}>Reset</button>
-      {/* check dbid & apisec are valid */}
     </form>
   );
 };
